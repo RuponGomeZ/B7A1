@@ -18,7 +18,7 @@ console.log(identity<number>(10));
 
 ```
 
-In this sample code above <T> is a placeholder type. When we use function it gets replaced by actual type.
+## In this sample code above <T> is a placeholder type. When we use function it gets replaced by actual type.
 
 ### Why we use Generic
 
