@@ -1,17 +1,14 @@
 //  Problem: 01
-const numbers: number[] = [1, 2, 3, 4, 5, 6];
+
 const filterEvenNumbers = (value: number[]): number[] => {
   const evenNumber = value.filter((num) => num % 2 == 0);
   return evenNumber;
 };
-const result = filterEvenNumbers(numbers);
 
 // Problem: 02
 const reverseString = (param: string): string => {
   return param.split("").reverse().join("");
 };
-
-const reverse = reverseString("typescript");
 
 // Problem 03
 type StringOrNumber = string | number;
@@ -19,23 +16,14 @@ type StringOrNumber = string | number;
 const checkType = (typeToCheck: StringOrNumber): string => {
   return typeof typeToCheck === "string" ? "String" : "Number";
 };
-const getType = checkType(0);
 
 // Problem 04
-const user = { id: 1, name: "John Doe", age: 21 };
 
-const getProperty = <X>(obj: X, key: keyof X) => {
+const getProperty = <X, K extends keyof X>(obj: X, key: K): X[K] => {
   return obj[key];
 };
 
-const getUsersProperty = getProperty(user, "name");
-
 // Problem 5
-const myBook = {
-  title: "TypeScript Guide",
-  author: "Jane Doe",
-  publishedYear: 2024,
-};
 
 interface Book {
   title: string;
@@ -43,12 +31,10 @@ interface Book {
   publishedYear: number;
 }
 
-const toggleReadStatus = (book: Book) => {
+const toggleReadStatus = (book: Book): Book & { isRead: boolean } => {
   const updatedStatus = { ...book, isRead: true };
   return updatedStatus;
 };
-
-const getStatus = toggleReadStatus(myBook);
 
 // Problem 06
 
@@ -73,8 +59,6 @@ class Student extends Person {
     return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`;
   }
 }
-
-const student = new Student("Alice", 20, "A");
 
 // Problem: 07
 

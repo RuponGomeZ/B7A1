@@ -1,26 +1,25 @@
-_Q:How do Generics allow you to build reusable components and functions that stay strictly typed regardless of the data structures passed in?_
+_Q: How do Generics allow you to build reusable components and functions that stay strictly typed regardless of the data structures passed in?_
 
 # Generics in TypeScript
 
-Generics in `Typescript` let us write reusable code that keeps the types safe. Instead of fixed data type, generics let us use any type keeping everything strongly typed.
+Generics in `TypeScript` let us write reusable code that keeps the types safe. Instead of fixed data type, generics let us use any type keeping everything strongly typed.
 
-when we don't want to write same type for different functions it is very useful as it works dynamically.
+When we don't want to write same type for different functions it is very useful as it works dynamically.
 
 ### Example Code:
 
-```
+```typescript
 function identity<T>(value: T): T {
   return value;
 }
 
 console.log(identity<string>("Hello"));
 console.log(identity<number>(10));
-
 ```
 
-## In this sample code above <T> is a placeholder type. When we use function it gets replaced by actual type.
+In this sample code above <T> is a placeholder type. When we use function it gets replaced by actual type.
 
-### Why we use Generic
+### Why we use Generics
 
 - Single function can work for many types.
 - Still keeps type safety.
@@ -28,4 +27,4 @@ console.log(identity<number>(10));
 
 ### Conclusion
 
-Generics makes `Typescript` codes reusable and flexible without losing safety.
+Generics makes TypeScript codes reusable and flexible without losing safety.
